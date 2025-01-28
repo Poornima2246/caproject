@@ -224,7 +224,7 @@ function ProductDetails() {
       try {
         console.log(`Fetching product with ID: ${id}`);
         // Fetch product details by ID
-        const response = await axios.get(`https://localhost:4000/api/dessert/${id}`);
+        const response = await axios.get(`https://caproject-server.onrender.com/api/dessert/${id}`);
         console.log("Response data:", response.data);
 
         // If the product data is valid, set it in state
@@ -266,7 +266,7 @@ function ProductDetails() {
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            src={`https://localhost:4000/upload/${mainImage}`}
+            src={`https://caproject-server.onrender.com/upload/${mainImage}`}
             alt={product.name || "Product"}
             className="w-full h-full lg:w-8/12 lg:h-8/12 mx-auto object-cover rounded-xl shadow-md"
             // Fallback if the image doesn't load
@@ -284,7 +284,7 @@ function ProductDetails() {
           <div className="flex gap-4 mt-4">
             {product.addImage1 && (
               <img
-                src={`https://localhost:4000/upload/${product.addImage1}`}
+                src={`https://caproject-server.onrender.com/upload/${product.addImage1}`}
                 alt="Additional view 1"
                 className="w-20 h-20 object-cover rounded shadow-md cursor-pointer"
                 onClick={() => setMainImage(product.addImage1)}
@@ -293,7 +293,7 @@ function ProductDetails() {
             )}
             {product.addImage2 && (
               <img
-                src={`https://localhost:4000/upload/${product.addImage2}`}
+                src={`https://caproject-server.onrender.com/upload/${product.addImage2}`}
                 alt="Additional view 2"
                 className="w-20 h-20 object-cover rounded shadow-md cursor-pointer"
                 onClick={() => setMainImage(product.addImage2)}
